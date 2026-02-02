@@ -1,0 +1,4 @@
+.env
+error.log
+get_collections.py
+data/anime.db

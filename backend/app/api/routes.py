@@ -32,6 +32,6 @@ def anime_detail(anime_id: int):
 
 
 @router.post("/sync/run", response_model=SyncStatus)
-def sync_run():
-    ok, msg = run_sync()
+def sync_run(full: bool = Query(False, description="run full sync")):
+    ok, msg = run_sync(full=full)
     return {"status": "ok" if ok else "error", "message": msg}
